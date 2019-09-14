@@ -37,6 +37,10 @@ puts lang.detect("Якщо сторінка була тут створена н�
 Adding languages to the data set is easy. Put each language sample in its own file named `[iso-code].txt` (ex. `en.txt` for english) and place all examples in a folder. Then paste the following code into a crystal file and modify the constants.
 
 ```crystal
+require "cadmium_lang"
+# or
+require "./src/cadmium_lang"
+
 DATA_PATH = "path/to/data"
 OUTPUT_FOLDER = "path/to/output"
 LOAD_DATA = false
