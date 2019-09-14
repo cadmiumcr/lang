@@ -1,0 +1,30 @@
+#!/usr/bin/env crystal
+
+require "json"
+require "csv"
+
+iso_data = File.read("data/iso-languages.csv")
+iso_csv = CSV.new(iso_data, headers: true)
+
+language_data = File.read("data/languages/meta.json")
+metadata = JSON.parse(language_data)
+
+categories = metadata["categories"].as_a.map(&.as_s)
+
+languages = [] of Tuple(String, String)
+iso_csv.each do |row|
+    eng = row[3].split(';').first
+    row.row.to_a[0,3].each do |code|
+        if categories.includes?(code)
+            languages << {code, eng}
+        end
+    end
+end
+
+readme = File.read("README.md")
+languages_arr = languages.to_h.map { |code, lang| "#{lang} (#{code})" }
+languages_string = languages_arr.join(", ")
+
+readme = readme.sub("## Supported languages", "## Supported languages (#{languages.size})")
+readme = readme.sub("**supported languages here**", languages_string)
+File.write("README.md", readme, mode: "w")

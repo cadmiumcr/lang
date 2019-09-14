@@ -1,0 +1,19 @@
+name: cadmium_lang
+version: 0.1.0
+
+authors:
+  - Chris Watson <cawatson1993@gmail.com>
+
+dependencies:
+  cadmium_tokenizer:
+    github: cadmiumcr/tokenizer
+    branch: master
+  cadmium_classifier:
+    github: cadmiumcr/classifier
+    branch: master
+  progress:
+    github: askn/progress
+
+crystal: 0.30.1
+
+license: MIT
