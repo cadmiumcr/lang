@@ -62,9 +62,9 @@ classifier.save(OUTPUT_FOLDER)
 
 In the case of the standard language set used in this library the values should be (assuming your crystal file is located at the root of the project):
 
-DATA_PATH: Anything. You need to make the folder.
-OUTPUT_FOLDER: "data/languages"
-LOAD_DATA: true
+- DATA_PATH: Anything. You need to make the folder.
+- OUTPUT_FOLDER: "data/languages"
+- LOAD_DATA: true
 
 ## Contributing
 
