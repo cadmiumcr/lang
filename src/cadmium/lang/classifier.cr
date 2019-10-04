@@ -4,7 +4,7 @@ require "cadmium_classifier"
 
 module Cadmium
   class Lang
-    class Classifier < Cadmium::BayesClassifier
+    class Classifier < Cadmium::Classifier::Bayes
       def initialize
         tokenizer = Lang::NGramsTokenizer.new
         super(tokenizer)

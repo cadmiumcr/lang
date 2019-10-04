@@ -13,7 +13,7 @@ Abkhazian (abk), Afrikaans (af), Albanian (alb), English, Old (ca.450-1100) (ang
    ```yaml
    dependencies:
      cadmium_lang:
-       github: cadmiumcr/cadmium_lang
+       github: cadmiumcr/lang
    ```
 
 2. Run `shards install`
